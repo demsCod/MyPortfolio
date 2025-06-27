@@ -7,7 +7,7 @@ export const About = () => {
                     About Me
                 </h1>
                 <div className="flex flex-row">
-                    <p className="font-poppins w-1/2 text-xl">
+                    <p className="font-poppins w-1/2 text-2xl">
                         I’m a passionate developer currently enrolled at 42 Paris, where I focus on system programming, algorithms, and software architecture through a hands-on, project-based curriculum. My journey started in sports science, which taught me the value of teamwork, discipline, and designing programs with the end user in mind.
 
                         I enjoy tackling real-world challenges, whether it’s building a lightweight mobile coaching app in React Native or developing a custom UNIX shell in C. I thrive in fast-paced environments and love working on projects with meaningful impact. My experience includes participating in hackathons like Mistral AI x Doctolib, where I combined AI, databases, and clean UI to deliver a working MVP in a limited time.

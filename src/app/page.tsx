@@ -6,6 +6,7 @@ import { ScrollIndicator } from "./components/ScrollIndicator";
 import { About } from "./components/About";
 
 export default function Home() {
+  
   return (
     <main>
       <Header />
