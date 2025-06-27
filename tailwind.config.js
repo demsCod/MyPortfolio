@@ -33,7 +33,8 @@ module.exports = {
         title: ["var(--font-sora)", "sans-serif"],
         headtitle: ["var(--font-poppins)", "sans-serif"],
         montserrat: ["var(--font-montserrat)", "sans-serif"],
-        poppins: ["var(--font-poppins)", "sans-serif"], // Alias utile
+        poppins: ["var(--font-poppins)", "sans-serif"], // Alias utile,
+        piedra: ["var(--font-piedra)", "sans-serif"],
       },
     },
   },

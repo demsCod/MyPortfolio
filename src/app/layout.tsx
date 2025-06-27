@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 import { Geist, Geist_Mono } from "next/font/google";
-import { Poppins, Sora, Montserrat } from "next/font/google";
+import { Poppins, Sora, Montserrat, Piedra } from "next/font/google";
 import type { Metadata } from "next";
 
 import "./globals.css";
@@ -36,6 +36,13 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
+const piedra = Piedra({
+  variable: "--font-piedra",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Mohamed Dembele - Software Engineer",
   description: "A Software Engineer specializing in web development and software solutions.",
@@ -45,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${sora.variable} ${poppins.variable} ${montserrat.variable} antialiased h-full bg-background text-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} ${sora.variable} ${poppins.variable} ${montserrat.variable} ${piedra.variable} antialiased h-full bg-background text-foreground`}
       >
         {children}
       </body>
