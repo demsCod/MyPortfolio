@@ -3,7 +3,7 @@ import { Section } from "./Section";
 export const Hero = () => {
     return (
         <Section className="flex flex-row items-center justify-center  min-h-screen">
-            <div className="w-5/6 text-center h-72  md:bg-red-400 sm:bg-red-500  xl:bg-transparent  3xl:bg-blue-500">
+            <div className="w-5/6 text-center h-72  md:bg-red-400 sm:bg-red-500   xl:bg-transparent  lg:bg-transparent">
                 <h3 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-montserrat font-extrabold mb-4">
                     Hi, I'm{" "}
                     <span className="text-primary font-extrabold font-poppins">

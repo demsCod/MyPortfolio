@@ -1,9 +1,9 @@
 export const About = () => {
 
     return (
-        <div className="h-screen max-w-5/6 flex  px-10  max-w-5/6 flex-col ">
+        <div className="h-screen max-w-5/6 lg:max-w-full flex  px-10  max-w-5/6 flex-col ">
             <div className="h-full items-center justify-center ">
-                <img src="/images/mdembele.png" alt="Mohamed Dembele" className="w-full h-1/2  mt-5 object-cover rounded-xl  border-primary "  
+                <img src="/images/mdembele.png" alt="Mohamed Dembele" className="w-full h-1/2 md:h-3/4 lg:flex lg:w-1/2 mt-5 object-cover justify-end rounded-xl  border-primary "  
                         />
                 <h1 className="font-montserrat font-bold mt-5 mb-5 text-3xl">
                     ABOUT
