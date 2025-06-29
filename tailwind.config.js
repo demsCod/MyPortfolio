@@ -41,8 +41,3 @@ module.exports = {
   plugins: [],
 }
 
-/*Titre principal ("Hi, I'm Nimesh") :
-La partie "Hi, I'm" semble utiliser une police sans serif en gras, probablement Poppins Bold ou Montserrat ExtraBold.
-La partie "Nimesh" est en violet, très épaisse et ronde.
-Cela ressemble beaucoup à Poppins ExtraBold ou Baloo 2 Bold (qui a des traits plus ronds et ludiques).
-*/
