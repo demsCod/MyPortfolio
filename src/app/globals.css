@@ -9,20 +9,33 @@
 
 @layer base {  
     :root {
-      --background: 196  41% 7%; 
+      --background: 187 53% 97%; /*set*/
+      --foreground: 192 81% 33%;
+      --card: 184 69% 92; /*set*/
+      --card-foreground: 222 47% 11%;
+      --border: 188 61% 76%; /*set*/
+      --primary: 191 100% 39%;
+      --primary-foreground: 192 69% 17%;
+      --secondary: 210 40% 96%;
+      --secondary-foreground: 222 47% 11%;
+      --accent: 191 93% 38%;
+      --accent-foreground: 222 47% 11%;
+      --ring: 189 60% 53%; /*set*/
+      --radius: 0.5rem;
+  }
+    .dark{
+      --background: 199 33% 9%; 
+      --foreground: 190 80% 84%;
       --card: 193 74% 12%;
       --card-foreground: 218 23% 16%;
-      --accent: 191 71%  48%;
       --border: 193 75% 28%;;
       --primary: 191 100% 39%;
       --primary-foreground: 190 75% 60%;
-      --ring: 193 75% 28%;
-      --foreground: 190 80% 84%;
-      --input: 220, 13%, 91%;
       --secondary: 210 16% 90%;
       --secondary-foreground: 218 15% 27%;
+      --accent: 191 71%  48%;
       --accent-foreground: 218 14% 20%;
-      --radius: 0.5rem;
+      --ring: 193 75% 28%;
         }
   }
 

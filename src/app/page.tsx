@@ -2,15 +2,18 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Projects } from "./components/Projects";
 import { Section } from "./components/Section";
-import { ScrollIndicator } from "./components/ScrollIndicator";
+import {Skills} from "./components/Skills";
 import { About } from "./components/About";
+import {Contact} from "./components/Contact";
+import { Footer } from "./components/Footer";
+import { ScrollIndicator } from "./components/ScrollIndicator";
 
 export default function Home() {
   
   return (
     <main>
       <Header />
-      <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+      <div className="h-5/6  scroll-smooth">
         <Section id="hero" className="snap-start">
           <Hero />
         </Section>
@@ -19,6 +22,15 @@ export default function Home() {
         </Section>
         <Section id ="about" className="snap-start">
           <About/>
+        </Section>
+        <Section id="skills" className="snap-start">
+          <Skills />
+        </Section>
+        <Section id="contact" className="snap-start">
+          <Contact />
+        </Section>
+        <Section id="footer" className="snap-start">
+          <Footer />
         </Section>
       </div>
     </main>
