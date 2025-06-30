@@ -2,6 +2,7 @@
 import { Section } from "./Section"
 import React, { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
+
 // Composant ReadmeCard amélioré avec chargement asynchrone correct
 const ReadmeCard = () => {
     const [markdownContent, setMarkdownContent] = useState<string>('Loading README...');
@@ -39,7 +40,7 @@ type CardComponentsProps = {
 
 const CardComponents: React.FC<CardComponentsProps> = ({ title, image, link, description }) => {
     return (
-        <div className="bg-card rounded-lg shadow-xl flex flex-col border border-primary/20 overflow-hidden transition-all duration-300 hover:scale-103 hover:ring-2 ring-ring  hover:shadow-primary/20 hover:shadow-lg xl:min-h-fit">
+        <div className="bg-card/70 backdrop-blur-sm rounded-lg shadow-xl flex flex-col border border-primary/20 overflow-hidden transition-all duration-300 hover:scale-103 hover:ring-2 ring-ring hover:shadow-primary/20 hover:shadow-lg xl:min-h-fit">
             <div className="h-48 sm:h-40 md:h-48 lg:h-56 w-full overflow-hidden">
                 <img
                     src={image}
@@ -113,15 +114,22 @@ const ProjectsCards = () => {
 
 export const Projects = () => {
     return (
-        <Section className="min-h-screen w-full flex flex-col items-center justify-start py-16 md:py-20 lg:py-24">
-            <div className="w-full max-w-7xl flex flex-col items-center">
+        <Section className="relative min-h-screen w-full flex flex-col items-center justify-start py-16 md:py-20 lg:py-24">
+            {/* Gradient Background Effects */}
+           
+            
+            {/* Content */}
+            <div className="relative z-10 w-full max-w-7xl flex flex-col items-center">
                 <h1 className="font-montserrat text-primary-foreground text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
                     My Projects
                 </h1>
                 <p className="font-poppins text-foreground/80 text-lg md:text-xl mb-8 md:mb-12 text-center max-w-2xl">
                     Here are some of my recent projects I've worked on
                 </p>
-                <hr className="border-t-2 border-border w-24 md:w-32 mx-auto mb-10 md:mb-14" />
+                <div className="relative">
+                    <hr className="border-t-2 border-border w-24 md:w-32 mx-auto mb-10 md:mb-14" />
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-1 bg-primary blur-sm"></div>
+                </div>
                 
                 <ProjectsCards />
             </div>                    

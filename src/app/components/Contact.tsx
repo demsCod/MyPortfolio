@@ -82,8 +82,8 @@ export const Contact = () => {
                     </form>
                     
                     {/* Social Links Section */}
-                    <div className="w-full lg:w-1/3 mt-10 lg:mt-0">
-                        <div className="bg-card p-6 rounded-xl border font-poppins border-border/50">
+                    <div className="w-full lg:w-1/3 mt-10 lg:mt-0 ">
+                        <div className="bg-card p-6 rounded-xl border font-poppins border-border/50 overflow-x-auto">
                             <h3 className="font-montserrat font-semibold text-xl mb-4 text-center lg:text-left">Connect With Me</h3>
                             <p className="text-foreground/80 mb-6 text-center lg:text-left">
                                 You can also find me on these platforms:
