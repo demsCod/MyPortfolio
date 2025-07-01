@@ -85,7 +85,7 @@ const ProjectsCards = () => {
             title: "Transcendence",
             descriptionKey: 'projectTranscendence',
             image: "https://i.gifer.com/QgxJ.gif",
-            link: "#"
+            link: "https://github.com/42-alliance/transcendence"
         },
         {
             id: 3,

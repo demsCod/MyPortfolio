@@ -64,8 +64,8 @@ export const Header = () => {
                         className="focus:outline-none hover:text-primary transition-colors duration-200"
                         onClick={toggleLanguage}
                     >
-                        <svg className="w-6 h-6 sm:w-8 sm:h-6" viewBox="0 0 24 24" fill="none">
-                            <text x="2" y="17" fontSize="15" fontFamily="Montserrat" fill="currentColor">
+                        <svg className="w-6 h-8 sm:w-8 sm:h-9 " viewBox="0 0 24 24" fill="none">
+                            <text x="2" y="17" fontSize="16" fontFamily="Montserrat" fill="currentColor">
                                 {t('language')}
                             </text>
                         </svg>
@@ -82,19 +82,7 @@ export const Header = () => {
                         ) : (
                             <MoonIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                         )}
-                    </button>
-                    
-                    {/* Menu Button */}
-                    <button 
-                        aria-label="Open menu" 
-                        className="p-1 focus:outline-none hover:text-primary transition-colors duration-200"
-                    >
-                        <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                            <line x1="4" y1="7" x2="20" y2="7" />
-                            <line x1="4" y1="12" x2="20" y2="12" />
-                            <line x1="4" y1="17" x2="20" y2="17" />
-                        </svg>
-                    </button>
+                    </button>          
                 </div>
             </Section>
         </header>
