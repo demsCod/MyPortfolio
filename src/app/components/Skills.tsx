@@ -1,5 +1,7 @@
+"use client";
 import { Section } from "./Section";
 import Image from "next/image";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 // Interface pour les données de compétence
 interface Skill {
@@ -10,6 +12,7 @@ interface Skill {
 
 export const Skills = () => {
     // Données des compétences
+    const { t } = useLanguage();
     const skills: Skill[] = [
         {
             name: "React",
@@ -23,7 +26,7 @@ export const Skills = () => {
                     />
                 </div>
             ),
-            description: "Building modern, interactive UIs with React and Next.js"
+            description: "React"
         },
         {
             name: "Tailwind CSS",
@@ -37,7 +40,7 @@ export const Skills = () => {
                     />
                 </div>
             ),
-            description: "Creating responsive and beautiful interfaces with utility classes"
+            description: "TailwindCSS"
         },
         {
             name: "C++",
@@ -51,7 +54,7 @@ export const Skills = () => {
                     />
                 </div>
             ),
-            description: "System programming, algorithms, and performance optimization"
+            description: "Cpp"
         },
         {
             name: "Expo",
@@ -65,7 +68,7 @@ export const Skills = () => {
                     />
                 </div>
             ),
-            description: "Building cross-platform mobile applications with React Native"
+            description: "Expo"
         },
         {
             name: "TypeScript",
@@ -79,7 +82,7 @@ export const Skills = () => {
                     />
                 </div>
             ),
-            description: "Adding type safety and better developer experience to JavaScript projects"
+            description: "TypeScript"
         },
         {
             name: "Docker",
@@ -93,7 +96,7 @@ export const Skills = () => {
                     />
                 </div>
             ),
-            description: "Containerizing applications for consistent development and deployment"
+            description: "Docker"
         }
     ];
 
@@ -101,10 +104,10 @@ export const Skills = () => {
         <Section className="min-h-screen w-full flex items-center justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-16">
             <div className="max-w-7xl w-full flex flex-col">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-montserrat text-primary-foreground font-bold mb-4 text-center">
-                    My Skills
+                   {t('skillsTitle')}
                 </h2>
                 <p className="text-center font-poppins text-foreground/80 text-base sm:text-lg md:text-xl mb-10 max-w-3xl mx-auto">
-                    Here are the technologies and programming languages I specialize in. I'm constantly learning and expanding my skillset.
+                    {t('skillsSubtitle')}
                 </p>
                 
                 {/* Grid for skill cards */}
@@ -128,7 +131,7 @@ export const Skills = () => {
                             
                             {/* Description */}
                             <p className="font-poppins text-foreground/70 mb-4 text-sm sm:text-base flex-grow">
-                                {skill.description}
+                                {t(skill.description)}
                             </p>
                         </div>
                     ))}

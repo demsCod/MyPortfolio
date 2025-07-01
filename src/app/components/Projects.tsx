@@ -1,46 +1,26 @@
 "use client"
 import { Section } from "./Section"
+import type { Parameters } from "@/lib/i18n/LanguageContext";
 import React, { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
-// Composant ReadmeCard amélioré avec chargement asynchrone correct
-const ReadmeCard = () => {
-    const [markdownContent, setMarkdownContent] = useState<string>('Loading README...');
-
-    useEffect(() => {
-        fetch('https://raw.githubusercontent.com/demsCod/MyPortfolio/refs/heads/main/README.md')
-            .then(response => response.text())
-            .then(data => {
-                setMarkdownContent(data);
-            })
-            .catch(error => {
-                console.error('Error fetching README:', error);
-                setMarkdownContent('Failed to load README');
-            });
-    }, []);
-
-    return (
-        <div className="bg-primary rounded-xl shadow-lg w-full max-w-3xl p-4 md:p-6 lg:p-8 h-[300px] md:h-[500px] lg:h-[600px] overflow-auto transition-transform duration-300 hover:scale-102">
-            <h3 className="font-montserrat text-2xl md:text-3xl lg:text-4xl text-white font-bold mb-4">README.md</h3>
-            <div className="prose prose-invert max-w-none">
-                <ReactMarkdown>
-                    {markdownContent}
-                </ReactMarkdown>
-            </div>
-        </div>
-    )
-}
 
 type CardComponentsProps = {
     title: string;
+    descriptionKey?: Parameters<ReturnType<typeof useLanguage>['t']>[0];
     image: string;
     link: string;
-    description?: string;
 };
 
-const CardComponents: React.FC<CardComponentsProps> = ({ title, image, link, description }) => {
+const CardComponents: React.FC<CardComponentsProps> = ({ title, image, link, descriptionKey }) => {
+    const { t } = useLanguage();
+    const viewProject = t('viewProject');
+
+    const description = descriptionKey ? t(descriptionKey) : '';
+
     return (
-        <div className="bg-card/70 backdrop-blur-sm rounded-lg shadow-xl flex flex-col border border-primary/20 overflow-hidden transition-all duration-300 hover:scale-103 hover:ring-2 ring-ring hover:shadow-primary/20 hover:shadow-lg xl:min-h-fit">
+        <div className="bg-card backdrop-blur-sm rounded-lg shadow-xl flex flex-col border border-primary/20 overflow-hidden transition-all duration-300 hover:scale-103 hover:ring-2 ring-ring hover:shadow-primary/20 hover:shadow-lg xl:min-h-fit">
             <div className="h-48 sm:h-40 md:h-48 lg:h-56 w-full overflow-hidden">
                 <img
                     src={image}
@@ -59,9 +39,9 @@ const CardComponents: React.FC<CardComponentsProps> = ({ title, image, link, des
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-auto text-primary font-medium hover:text-primary-foreground flex items-center gap-2 transition-colors duration-200"
+                    className="mt-auto font-poppins text-primary font-medium hover:text-primary-foreground flex items-center gap-2 transition-colors duration-200"
                 >
-                    <span>View Project</span>
+                    <span>{viewProject}</span>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -78,41 +58,66 @@ const CardComponents: React.FC<CardComponentsProps> = ({ title, image, link, des
 };
 
 const ProjectsCards = () => {
-    return (
+
+    const { t } = useLanguage();
+
+    // Import the type for translation keys
+
+    type TranslationKey = Parameters<ReturnType<typeof useLanguage>['t']>[0];
+
+    const projects: {
+        id: number;
+        title: string;
+        descriptionKey: TranslationKey;
+        image: string;
+        link: string;
+    }[] = [
+        {
+            id: 1,
+            title: "Minishell",
+            descriptionKey: 'projectMinishell',
+            image: "https://media.geeksforgeeks.org/wp-content/uploads/20210825224545/1.gif",
+            link: "https://github.com/iibabyy/minishell"
+        },
+        {
+            id: 2,
+            title: "Transcendence",
+            descriptionKey: 'projectTranscendence',
+            image: "https://i.gifer.com/QgxJ.gif",
+            link: "#"
+        },
+        {
+            id: 3,
+            title: "So_long",
+            descriptionKey: 'projectSoLong',
+            image: "https://github.com/demsCod/so_long/blob/main/so_long.gif?raw=true",
+            link: "https://github.com/demsCod/so_long"
+        },
+        {
+            id: 4,
+            title: "CUB_3D",
+            descriptionKey: 'projectCub3D',
+            image: "https://github.com/demsCod/cub3D/blob/main/cub_3d.gif?raw=true",
+            link: "https://github.com/demsCod/cub3D"
+        }
+    ];
+     return (
         <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 md:px-8">
-            <CardComponents
-                key={1}
-                title="Minishell"
-                description="A simple shell implementation with basic command execution and piping"
-                image="https://media.geeksforgeeks.org/wp-content/uploads/20210825224545/1.gif"
-                link="https://github.com/iibabyy/minishell"
-            />
-            <CardComponents
-                key={2}
-                title="Transcendence"
-                description="Real-time multiplayer Pong game with user authentication and chat"
-                image="https://i.gifer.com/QgxJ.gif"
-                link="#"
-            />
-            <CardComponents
-                key={3}
-                title="So_long"
-                description="2D game where player collects items and reaches the exit"
-                image="https://github.com/demsCod/so_long/blob/main/so_long.gif?raw=true"
-                link="https://github.com/demsCod/so_long"
-            />
-            <CardComponents
-                key={4}
-                title="CUB_3D"
-                description="3D raycasting game inspired by Wolfenstein 3D"
-                image="https://github.com/demsCod/cub3D/blob/main/cub_3d.gif?raw=true"
-                link="https://github.com/demsCod/cub3D"
-            />
+            {projects.map(project => (
+                <CardComponents
+                    key={project.id}
+                    title={project.title}
+                    descriptionKey={project.descriptionKey}
+                    image={project.image}
+                    link={project.link}
+                />
+            ))}
         </div>
-    )
+    );
 }
 
 export const Projects = () => {
+    const { t } = useLanguage();
     return (
         <Section className="relative min-h-screen w-full flex flex-col items-center justify-start py-16 md:py-20 lg:py-24">
             {/* Gradient Background Effects */}
@@ -121,10 +126,10 @@ export const Projects = () => {
             {/* Content */}
             <div className="relative z-10 w-full max-w-7xl flex flex-col items-center">
                 <h1 className="font-montserrat text-primary-foreground text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
-                    My Projects
+                     {t('projectsTitle')}
                 </h1>
                 <p className="font-poppins text-foreground/80 text-lg md:text-xl mb-8 md:mb-12 text-center max-w-2xl">
-                    Here are some of my recent projects I've worked on
+                    {t('projectsSubtitle')}
                 </p>
                 <div className="relative">
                     <hr className="border-t-2 border-border w-24 md:w-32 mx-auto mb-10 md:mb-14" />

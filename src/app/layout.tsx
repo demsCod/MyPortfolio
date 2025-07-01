@@ -2,6 +2,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { Poppins, Sora, Montserrat, Piedra } from "next/font/google";
 import type { Metadata } from "next";
+import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 
 import "./globals.css";
 
@@ -54,7 +55,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sora.variable} ${poppins.variable} ${montserrat.variable} ${piedra.variable} antialiased h-full bg-background text-foreground`}
       >
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

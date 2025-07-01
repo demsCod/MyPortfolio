@@ -1,8 +1,13 @@
+"use client"
 import { Section } from "./Section";
 import { ArrowRightIcon, DownloadIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export const Hero = () => {
+    const { language, t } = useLanguage();
+    const resumeFile = language === 'fr' ? "cv-mohamed-fr.pdf" : "cv-mohamed-en.pdf";
+    
     return (
         <Section className="relative flex flex-col-reverse justify-center items-center min-h-screen xl:max-h-3.5 md:flex-row md:justify-between md:items-center md:px-8 lg:px-12 xl:px-16 2xl:px-24 overflow-hidden">
             {/* Gradient Background Effects - Inversé pour que le bas soit bg-background */}
@@ -17,12 +22,11 @@ export const Hero = () => {
             
             {/* Content */}
             <div className="w-full text-center mt-8 mb-12 md:text-left md:w-1/2 md:mt-0 md:mb-0 md:pr-4 lg:pr-8 xl:pr-12 relative z-10">
-                
                 <h3 className="text-3xl text-primary-foreground sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-montserrat font-extrabold mb-2 md:mb-3 lg:mb-4">
-                    Mohamed Dembele 
+                    {t('heroTitle')}
                 </h3>
                 <h2 className="text-xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-poppins font-semibold mb-4 md:mb-6 text-primary-foreground">
-                    Software Developer{""}<span className="text-foreground">, open to new opportunities. </span>
+                    {t('heroSubtitle')}{""}<span className="text-foreground">{t('heroOpportunities')}</span>
                 </h2>
                 <div className="flex items-center justify-center md:justify-start gap-4 mb-6">
                     {/* Bouton Contact avec lien d'ancrage */}
@@ -30,24 +34,24 @@ export const Hero = () => {
                         href="#contact" 
                         className="inline-flex items-center bg-primary text-white px-3 py-2 md:px-4 hover:ring-2 ring-ring md:py-3 lg:px-5 lg:py-3 rounded-lg font-poppins font-semibold transition-all duration-200 hover:bg-primary/90 border-2 border-border hover:shadow-lg hover:shadow-primary/20"
                     >
-                        contact me
+                        {t('contactMe')}
                         <ArrowRightIcon className="inline-block ml-2" />
                     </Link>
                     
                     {/* Bouton Resume avec téléchargement */}
                     <a 
-                        href="/resume/cv-mohamed-fr.pdf"
-                        download="Mohamed_Dembele_Resume.pdf"
+                        href={`/resume/${resumeFile}`}
+                        download={`Mohamed_Dembele_Resume.pdf`}
                         className="inline-flex items-center bg-background px-3 py-2 md:px-4 md:py-3 lg:px-5 lg:py-3 rounded-lg font-poppins font-semibold transition-all duration-200 hover:ring-2 ring-ring hover:bg-card/90 border-2 border-border hover:shadow-lg"
                     >
-                        my resume
+                        {t('myResume')}
                         <DownloadIcon className="inline-block ml-2" />
                     </a>
                 </div>
                 
                 <div className="hidden font-poppins md:flex items-center gap-2 mt-8 text-sm text-foreground/70">
                     <span className="w-10 h-0.5 bg-primary/50"></span>
-                    <span>Scroll down to see my work</span>
+                    <span>{t('scrollDown')}</span>
                 </div>
             </div>
             

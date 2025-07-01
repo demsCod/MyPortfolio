@@ -1,18 +1,22 @@
+"use client"
 import React from 'react'
 import { Section } from "./Section";
 import Image from "next/image";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export const Contact = () => {
+    const { t } = useLanguage();
+    
     return (
         <Section className="flex font-poppins flex-col items-center min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-16 md:py-20">
             <div className="w-5/6 mx-auto">
                 <div className="text-center mb-8 md:mb-12">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-montserrat font-bold mb-4 text-primary-foreground">
-                        Contact Me
+                        {t('contactTitle')}
                     </h1>
          
                     <p className="text-base sm:text-lg md:text-xl font-poppins mb-8 text-foreground/90 max-w-2xl mx-auto">
-                        I'm always open to new opportunities and collaborations. Feel free to reach out!
+                        {t('contactSubtitle')}
                     </p>
                 </div>
 
@@ -33,7 +37,7 @@ export const Contact = () => {
                                     htmlFor="name" 
                                     className="absolute text-sm text-foreground/70 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
-                                    Name
+                                    {t('name')}
                                 </label>
                             </div>
 
@@ -50,7 +54,7 @@ export const Contact = () => {
                                     htmlFor="email" 
                                     className="absolute text-sm text-foreground/70 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                                 >
-                                    Email
+                                    {t('email')}
                                 </label>
                             </div>
                         </div>
@@ -68,7 +72,7 @@ export const Contact = () => {
                                 htmlFor="message" 
                                 className="absolute text-sm text-foreground/70 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                             >
-                                Message
+                                {t('message')}
                             </label>
                         </div>
 
@@ -77,16 +81,18 @@ export const Contact = () => {
                             type="submit" 
                             className="px-6 py-3 bg-transparent border-2 border-border hover:bg-primary text-primary-foreground hover:text-card-foreground rounded-lg font-poppins font-semibold transition-all duration-200 w-full sm:w-auto"
                         >
-                            Send Message
+                            {t('sendMessage')}
                         </button>
                     </form>
                     
                     {/* Social Links Section */}
                     <div className="w-full lg:w-1/3 mt-10 lg:mt-0 ">
                         <div className="bg-card p-6 rounded-xl border font-poppins border-border/50 overflow-x-auto">
-                            <h3 className="font-montserrat font-semibold text-xl mb-4 text-center lg:text-left">Connect With Me</h3>
+                            <h3 className="font-montserrat font-semibold text-xl mb-4 text-center lg:text-left">
+                                {t('connectWithMe')}
+                            </h3>
                             <p className="text-foreground/80 mb-6 text-center lg:text-left">
-                                You can also find me on these platforms:
+                                {t('findMeOn')}
                             </p>
                             
                             <div className="flex flex-wrap justify-center lg:justify-start gap-4">
@@ -120,7 +126,7 @@ export const Contact = () => {
                             
                             <div className="mt-8">
                                 <p className="text-foreground/80 text-sm text-center lg:text-left">
-                                    Or send an email directly:
+                                    {t('orEmailDirectly')}
                                 </p>
                                 <a 
                                     href="mailto:mohamed.pro.dembele@gmail.com" 

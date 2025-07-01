@@ -2,11 +2,12 @@
 import { useState, useEffect } from "react";
 import { Section } from "./Section";
 import { SunIcon, MoonIcon } from "@radix-ui/react-icons";
-
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export const Header = () => {
     // État pour suivre le thème actuel
     const [isDarkMode, setIsDarkMode] = useState<boolean>(true); // Par défaut en mode sombre
+    const { language, setLanguage, t } = useLanguage();
     
     // Effet pour initialiser le thème depuis localStorage ou préférence système
     useEffect(() => {
@@ -45,6 +46,11 @@ export const Header = () => {
         localStorage.setItem("theme", newDarkMode ? "dark" : "light");
     };
 
+    // Fonction pour changer de langue
+    const toggleLanguage = () => {
+        setLanguage(language === 'en' ? 'fr' : 'en');
+    };
+
     return (
         <header className="sticky top-0 z-50 backdrop-blur-md bg-background/95">
             <Section className="flex justify-between items-center px-4 sm:px-6 md:px-10 py-4 border-b border-border">
@@ -56,9 +62,12 @@ export const Header = () => {
                     <button 
                         aria-label="Switch language" 
                         className="focus:outline-none hover:text-primary transition-colors duration-200"
+                        onClick={toggleLanguage}
                     >
                         <svg className="w-6 h-6 sm:w-8 sm:h-6" viewBox="0 0 24 24" fill="none">
-                            <text x="2" y="17" fontSize="15" fontFamily="Montserrat" fill="currentColor">FR</text>
+                            <text x="2" y="17" fontSize="15" fontFamily="Montserrat" fill="currentColor">
+                                {t('language')}
+                            </text>
                         </svg>
                     </button>
                     

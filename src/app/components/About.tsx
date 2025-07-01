@@ -1,13 +1,46 @@
+"use client"
 import { Section } from "./Section";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export const About = () => {
+    const { t } = useLanguage();
+    
+    // Diviser la description pour pouvoir mettre en surbrillance certains mots
+    const aboutDescription = t('aboutDescription').split('\n\n');
+    
+    // Fonction pour mettre en surbrillance des mots clés
+    const highlightKeywords = (text: string) => {
+        const keywords = [
+            'software developer', 'développeur logiciel',
+            '42 Paris',
+            'useful tools', 'outils utiles',
+            'mobile app development', 'développement d\'applications mobiles',
+            'intuitive, user-focused experiences', 'expériences intuitives et centrées sur l\'utilisateur',
+            'new frameworks', 'nouveaux frameworks',
+            'languages', 'langages',
+            'development paradigms', 'paradigmes de développement',
+            'hackathons',
+            'hands-on learning', 'apprentissage pratique',
+            'challenging, real-world projects', 'projets concrets et stimulants'
+        ];
+        
+        let result = text;
+        keywords.forEach(keyword => {
+            // Éviter de remplacer des mots déjà dans un span
+            const regex = new RegExp(`(?<!<span[^>]*>)${keyword}(?![^<]*</span>)`, 'gi');
+            result = result.replace(regex, `<span class="text-primary-foreground font-medium">${keyword}</span>`);
+        });
+        
+        return result;
+    };
+
     return (
         <Section className="w-full min-h-screen flex items-center justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-16 md:py-20">
             <div className=" w-5/6 flex flex-col items-center gap-8">
                 {/* Titre principal */}
                 <div className="text-center mb-6 md:mb-12">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-montserrat font-bold mb-4 text-primary-foreground">
-                        About Me
+                        {t('aboutTitle')}
                     </h1>
                     <div className="relative">
                         <hr className="border-t-2 border-4 border-border w-24 md:w-32 mx-auto" />
@@ -34,17 +67,11 @@ export const About = () => {
                             Mohamed Dembele
                             <hr className="border-t-2 border-border rounded-2xl w-full mx-auto my-4" />
                         </h2>
-                        <p className="font-poppins text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl/8 mb-8 leading-relaxed">
-                            I'm a <span className="text-primary-foreground font-medium">software developer</span> from France, currently studying at <span className="text-primary-foreground font-medium">42 Paris</span>. I enjoy building <span className="text-primary-foreground font-medium">useful tools</span> that solve real problems and improve everyday workflows. I'm particularly interested in <span className="text-primary-foreground font-medium">mobile app development</span> and love creating <span className="text-primary-foreground font-medium">intuitive, user-focused experiences</span> for iOS and Android. 
-                            
-                            <br/><br/>
-                            
-                            Passionate about technology, I constantly explore <span className="text-primary-foreground font-medium">new frameworks, languages, and development paradigms</span> to sharpen my skills. I actively participate in <span className="text-primary-foreground font-medium">hackathons</span>, where I thrive under pressure and collaborate on innovative ideas.
-                            
-                            <br/><br/>
-                            
-                            Above all, I'm driven by <span className="text-primary-foreground font-medium">hands-on learning</span> and always looking for opportunities to grow through <span className="text-primary-foreground font-medium">challenging, real-world projects</span>.
-                        </p>
+                        <div className="font-poppins text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl/8 mb-8 leading-relaxed">
+                            {aboutDescription.map((paragraph, index) => (
+                                <p key={index} className="mb-6" dangerouslySetInnerHTML={{ __html: highlightKeywords(paragraph) }}></p>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
