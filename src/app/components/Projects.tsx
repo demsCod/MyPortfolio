@@ -1,8 +1,6 @@
 "use client"
 import { Section } from "./Section"
 import type { Parameters } from "@/lib/i18n/LanguageContext";
-import React, { useEffect, useState } from 'react'
-import ReactMarkdown from 'react-markdown'
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 

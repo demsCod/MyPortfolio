@@ -3,9 +3,10 @@ import { Section } from "./Section";
 import { ArrowRightIcon, DownloadIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import Image from "next/image";
 
 export const Hero = () => {
-    const { language, t } = useLanguage();
+    const { t } = useLanguage();
     const resumeFile = "cv-mohamed-fr.pdf" ;
     
     return (
@@ -58,9 +59,11 @@ export const Hero = () => {
             <div className="w-full flex justify-center md:w-1/2 md:justify-end relative z-10">
                 <div className="relative">
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-primary/10 rounded-xl blur-md"></div>
-                    <img
+                    <Image
                         src="/images/mdembele.png"
                         alt="Mohamed Dembele"
+                        width={384}
+                        height={384}
                         className="relative w-60 h-60 rounded-xl object-cover shadow-lg
                             sm:w-64 sm:h-64
                             md:w-72 md:h-72
