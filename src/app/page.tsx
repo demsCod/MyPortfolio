@@ -6,7 +6,6 @@ import {Skills} from "./components/Skills";
 import { About } from "./components/About";
 import {Contact} from "./components/Contact";
 import { Footer } from "./components/Footer";
-import { ScrollIndicator } from "./components/ScrollIndicator";
 
 export default function Home() {
   

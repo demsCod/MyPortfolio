@@ -1,7 +1,6 @@
 "use client"
 import React, { useState } from 'react'
 import { Section } from "./Section";
-import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export const Contact = () => {
@@ -36,7 +35,7 @@ export const Contact = () => {
                 setStatusMessage(t('errorMessage') + result.error);
                 setStatusType("error");
             }
-        } catch (err) {
+        } catch (error) {
             setStatusMessage(t('errorOccurred'));
             setStatusType("error");
         }

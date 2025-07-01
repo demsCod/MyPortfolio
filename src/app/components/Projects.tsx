@@ -2,6 +2,7 @@
 import { Section } from "./Section"
 import type { Parameters } from "@/lib/i18n/LanguageContext";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import Image from "next/image";
 
 
 type CardComponentsProps = {
@@ -19,11 +20,14 @@ const CardComponents: React.FC<CardComponentsProps> = ({ title, image, link, des
 
     return (
         <div className="bg-card backdrop-blur-sm rounded-lg shadow-xl flex flex-col border border-primary/20 overflow-hidden transition-all duration-300 hover:scale-103 hover:ring-2 ring-ring hover:shadow-primary/20 hover:shadow-lg xl:min-h-fit">
-            <div className="h-48 sm:h-40 md:h-48 lg:h-56 w-full overflow-hidden">
-                <img
+            <div className="h-48 sm:h-40 md:h-48 lg:h-56 w-full overflow-hidden relative">
+                <Image
                     src={image}
                     alt={title}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    priority={false}
                 />
             </div>
             <div className="flex flex-col justify-between flex-1 p-4 md:p-5">
