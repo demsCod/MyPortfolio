@@ -85,7 +85,7 @@ const ProjectsCards = () => {
                 title="Minishell"
                 description="A simple shell implementation with basic command execution and piping"
                 image="https://media.geeksforgeeks.org/wp-content/uploads/20210825224545/1.gif"
-                link="#"
+                link="https://github.com/iibabyy/minishell"
             />
             <CardComponents
                 key={2}
@@ -98,15 +98,15 @@ const ProjectsCards = () => {
                 key={3}
                 title="So_long"
                 description="2D game where player collects items and reaches the exit"
-                image="https://media.tenor.com/llSAvv3PxdAAAAAM/pacman-namco.gif"
-                link="#"
+                image="https://github.com/demsCod/so_long/blob/main/so_long.gif?raw=true"
+                link="https://github.com/demsCod/so_long"
             />
             <CardComponents
                 key={4}
                 title="CUB_3D"
                 description="3D raycasting game inspired by Wolfenstein 3D"
-                image="https://user-images.githubusercontent.com/55356071/112175931-f34c9f00-8bf7-11eb-8276-23382485172a.gif"
-                link="#"
+                image="https://github.com/demsCod/cub3D/blob/main/cub_3d.gif?raw=true"
+                link="https://github.com/demsCod/cub3D"
             />
         </div>
     )
@@ -128,7 +128,6 @@ export const Projects = () => {
                 </p>
                 <div className="relative">
                     <hr className="border-t-2 border-border w-24 md:w-32 mx-auto mb-10 md:mb-14" />
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-1 bg-primary blur-sm"></div>
                 </div>
                 
                 <ProjectsCards />

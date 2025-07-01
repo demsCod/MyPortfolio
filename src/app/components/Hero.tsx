@@ -17,6 +17,7 @@ export const Hero = () => {
             
             {/* Content */}
             <div className="w-full text-center mt-8 mb-12 md:text-left md:w-1/2 md:mt-0 md:mb-0 md:pr-4 lg:pr-8 xl:pr-12 relative z-10">
+                
                 <h3 className="text-3xl text-primary-foreground sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-montserrat font-extrabold mb-2 md:mb-3 lg:mb-4">
                     Mohamed Dembele 
                 </h3>
