@@ -47,6 +47,9 @@ const piedra = Piedra({
 export const metadata: Metadata = {
   title: "Mohamed Dembele - Software Engineer",
   description: "A Software Engineer specializing in web development and software solutions.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
