@@ -1,6 +1,7 @@
 "use client"
 import { Section } from "./Section";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import Image from "next/image";
 
 export const About = () => {
     const { t } = useLanguage();
@@ -52,9 +53,11 @@ export const About = () => {
                     <div className="w-full lg:w-1/2 flex justify-center lg:justify-end xl:justify-start order-1 lg:order-2">
                         <div className="relative">
                             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl blur-md"></div>
-                            <img 
+                            <Image
                                 src="https://avatars.githubusercontent.com/u/151725068?v=4" 
                                 alt="Mohamed Dembele" 
+                                width={450}
+                                height={450}
                                 className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[450px] xl:h-[450px] 
                                 object-cover rounded-xl shadow-lg border-2 border-primary/20"  
                             />
