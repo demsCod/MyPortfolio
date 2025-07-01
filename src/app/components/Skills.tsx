@@ -2,12 +2,14 @@
 import { Section } from "./Section";
 import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { TranslationKey } from "@/lib/i18n/translations";
+import React from "react";
 
 // Interface pour les données de compétence
 interface Skill {
     name: string;
-    icon: JSX.Element;
-    description?: string;
+    icon: React.ReactElement;
+    descriptionKey: TranslationKey;
 }
 
 export const Skills = () => {
@@ -20,13 +22,14 @@ export const Skills = () => {
                 <div className="w-full h-full relative">
                     <Image 
                         src="/images/react.svg"
-                        alt="C++"
-                        layout="fill"
-                        objectFit="contain"
+                        alt="React"
+                        width={40}
+                        height={40}
+                        style={{ objectFit: "contain" }}
                     />
                 </div>
             ),
-            description: "React"
+            descriptionKey: "React"
         },
         {
             name: "Tailwind CSS",
@@ -34,13 +37,14 @@ export const Skills = () => {
                 <div className="w-full h-full relative">
                     <Image 
                         src="/images/tailwindcss-icon.svg"
-                        alt="C++"
-                        layout="fill"
-                        objectFit="contain"
+                        alt="Tailwind CSS"
+                        width={40}
+                        height={40}
+                        style={{ objectFit: "contain" }}
                     />
                 </div>
             ),
-            description: "TailwindCSS"
+            descriptionKey: "TailwindCSS"
         },
         {
             name: "C++",
@@ -49,12 +53,13 @@ export const Skills = () => {
                     <Image 
                         src="/images/c-plusplus.svg"
                         alt="C++"
-                        layout="fill"
-                        objectFit="contain"
+                        width={40}
+                        height={40}
+                        style={{ objectFit: "contain" }}
                     />
                 </div>
             ),
-            description: "Cpp"
+            descriptionKey: "Cpp"
         },
         {
             name: "Expo",
@@ -62,13 +67,14 @@ export const Skills = () => {
                 <div className="w-full h-full relative">
                     <Image 
                         src="/images/expo-icon.svg"
-                        alt="C++"
-                        layout="fill"
-                        objectFit="contain"
+                        alt="Expo"
+                        width={40}
+                        height={40}
+                        style={{ objectFit: "contain" }}
                     />
                 </div>
             ),
-            description: "Expo"
+            descriptionKey: "Expo"
         },
         {
             name: "TypeScript",
@@ -76,13 +82,14 @@ export const Skills = () => {
                 <div className="w-full h-full relative">
                     <Image 
                         src="/images/typescript-icon.svg"
-                        alt="C++"
-                        layout="fill"
-                        objectFit="contain"
+                        alt="TypeScript"
+                        width={40}
+                        height={40}
+                        style={{ objectFit: "contain" }}
                     />
                 </div>
             ),
-            description: "TypeScript"
+            descriptionKey: "TypeScript"
         },
         {
             name: "Docker",
@@ -91,12 +98,13 @@ export const Skills = () => {
                     <Image
                         src="/images/docker-icon.svg"
                         alt="Docker"
-                        layout="fill"
-                        objectFit="contain"
+                        width={40}
+                        height={40}
+                        style={{ objectFit: "contain" }}
                     />
                 </div>
             ),
-            description: "Docker"
+            descriptionKey: "Docker"
         }
     ];
 
@@ -131,14 +139,11 @@ export const Skills = () => {
                             
                             {/* Description */}
                             <p className="font-poppins text-foreground/70 mb-4 text-sm sm:text-base flex-grow">
-                                {t(skill.description)}
+                                {t(skill.descriptionKey)}
                             </p>
                         </div>
                     ))}
                 </div>
-                
-         
-
             </div>
         </Section>
     );

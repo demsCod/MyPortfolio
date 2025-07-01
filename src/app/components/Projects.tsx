@@ -1,6 +1,6 @@
 "use client"
 import { Section } from "./Section"
-import type { Parameters } from "@/lib/i18n/LanguageContext";
+// Removed import of Parameters, use built-in TypeScript Parameters type
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import Image from "next/image";
 
