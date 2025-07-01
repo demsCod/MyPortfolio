@@ -35,7 +35,7 @@ export const Contact = () => {
                 setStatusMessage(t('errorMessage') + result.error);
                 setStatusType("error");
             }
-        } catch (error) {
+        } catch {
             setStatusMessage(t('errorOccurred'));
             setStatusType("error");
         }

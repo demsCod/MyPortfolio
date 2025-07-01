@@ -35,6 +35,7 @@ export const translations = {
     findMeOn: "You can also find me on these platforms:",
     orEmailDirectly: "Or send an email directly:",
     
+    
     // Footer
     footerDescription: "Software developer passionate about creating clean, efficient, and user-friendly solutions.",
     quickLinks: "Quick Links",

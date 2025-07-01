@@ -61,7 +61,6 @@ const CardComponents: React.FC<CardComponentsProps> = ({ title, image, link, des
 
 const ProjectsCards = () => {
 
-    const { t } = useLanguage();
 
     // Import the type for translation keys
 
