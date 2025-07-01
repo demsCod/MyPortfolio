@@ -76,7 +76,7 @@ const ProjectsCards = () => {
             id: 1,
             title: "Minishell",
             descriptionKey: 'projectMinishell',
-            image: "https://media.geeksforgeeks.org/wp-content/uploads/20210825224545/1.gif",
+            image: "https://github.com/iibabyy/minishell/blob/main/minishell.gif?raw=true",
             link: "https://github.com/iibabyy/minishell"
         },
         {

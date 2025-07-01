@@ -29,7 +29,7 @@ export const translations = {
     contactSubtitle: "I'm always open to new opportunities and collaborations. Feel free to reach out!",
     name: "Name",
     email: "Email",
-    message: "Message",
+    message: "Your Message",
     sendMessage: "Send Message",
     connectWithMe: "Connect With Me",
     findMeOn: "You can also find me on these platforms:",
@@ -61,6 +61,14 @@ export const translations = {
     Expo: "Building cross-platform mobile applications with React Native",
     TypeScript: "Adding type safety and modern features to JavaScript development",
     Docker: "Containerizing applications for consistent development and deployment",
+
+
+    namePlaceholder: 'john doe',
+    emailPlaceholder: 'johndoe@mail.com',
+    messagePlaceholder: 'Hi Mohamed, I have a internship opportunity for you!',
+    messageSent: '✅ Message sent successfully!',
+    errorMessage: '❌ Error: ',
+    errorOccurred: '❌ An error occurred.',
   },
   fr: {
     // Header
@@ -92,7 +100,7 @@ export const translations = {
     contactSubtitle: "Je suis toujours ouvert à de nouvelles opportunités et collaborations. N'hésitez pas à me contacter !",
     name: "Nom",
     email: "Email",
-    message: "Message",
+    message: "Votre Message",
     sendMessage: "Envoyer",
     connectWithMe: "Connectez-vous avec moi",
     findMeOn: "Vous pouvez également me trouver sur ces plateformes :",
@@ -124,6 +132,13 @@ export const translations = {
     Expo: "Création d'applications mobiles multiplateformes avec React Native",
     TypeScript: "Ajout de sécurité de type et de fonctionnalités modernes au développement JavaScript",
     Docker: "Conteneurisation des applications pour un développement et un déploiement cohérents",
+
+    namePlaceholder: 'jean dupont',
+    emailPlaceholder: 'jeandupont@mail.com',
+    messagePlaceholder: 'Bonjour Mohamed, j\'ai une opportunité de stage pour vous !',
+    messageSent: '✅ Message envoyé avec succès !',
+    errorMessage: '❌ Erreur : ',
+    errorOccurred: '❌ Une erreur est survenue.',
   }
 };
 

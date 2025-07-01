@@ -6,7 +6,7 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export const Hero = () => {
     const { language, t } = useLanguage();
-    const resumeFile = language === 'fr' ? "cv-mohamed-fr.pdf" : "cv-mohamed-en.pdf";
+    const resumeFile = "cv-mohamed-fr.pdf" ;
     
     return (
         <Section className="relative flex flex-col-reverse justify-center items-center min-h-screen xl:max-h-3.5 md:flex-row md:justify-between md:items-center md:px-8 lg:px-12 xl:px-16 2xl:px-24 overflow-hidden">

@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { Section } from "./Section";
 import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
@@ -7,6 +7,47 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 export const Contact = () => {
     const { t } = useLanguage();
     
+    const [statusMessage, setStatusMessage] = useState<string | null>(null);
+    const [statusType, setStatusType] = useState<"success" | "error" | null>(null);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+
+        const formData = {
+            name: (form.elements.namedItem("name") as HTMLInputElement)?.value || "",
+            email: (form.elements.namedItem("email") as HTMLInputElement)?.value || "",
+            message: (form.elements.namedItem("message") as HTMLTextAreaElement)?.value || "",
+        };
+
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await res.json();
+            if (res.ok) {
+                setStatusMessage(t('messageSent'));
+                setStatusType("success");
+                form.reset();
+            } else {
+                setStatusMessage(t('errorMessage') + result.error);
+                setStatusType("error");
+            }
+        } catch (err) {
+            setStatusMessage(t('errorOccurred'));
+            setStatusType("error");
+        }
+
+        // Supprime le message après 5s
+        setTimeout(() => {
+            setStatusMessage(null);
+            setStatusType(null);
+        }, 5000);
+    };
+
     return (
         <Section className="flex font-poppins flex-col items-center min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 py-16 md:py-20">
             <div className="w-5/6 mx-auto">
@@ -22,58 +63,59 @@ export const Contact = () => {
 
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full">
                     {/* Form Section */}
-                    <form className="w-full lg:w-2/3">
+                    <form className="w-full lg:w-2/3" onSubmit={handleSubmit}>
                         <div className="flex flex-col sm:flex-row sm:gap-6 mb-6">
-                            {/* Name Field */}
-                            <div className="relative w-full mb-6 sm:mb-0 group">
-                                <input 
-                                    type="text" 
-                                    id="name" 
-                                    className="font-poppins block w-full py-2.5 px-0 bg-transparent border-0 border-b-2 border-border appearance-none focus:outline-none focus:border-primary peer" 
-                                    placeholder=" " 
-                                    required 
-                                />
+                            {/* Name Field - Label repositionné */}
+                            <div className="relative w-full sm:mb-0 group mb-6 sm:mb-0">
                                 <label 
                                     htmlFor="name" 
-                                    className="absolute text-sm text-foreground/70 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="block text-sm xl:text-lg text-foreground/70 mb-2 font-medium"
                                 >
                                     {t('name')}
                                 </label>
-                            </div>
-
-                            {/* Email Field */}
-                            <div className="relative w-full group">
                                 <input 
-                                    type="email" 
-                                    id="email" 
-                                    className="font-poppins block w-full py-2.5 px-0 bg-transparent border-0 border-b-2 border-border appearance-none focus:outline-none focus:border-primary peer" 
-                                    placeholder=" " 
+                                    type="text" 
+                                    id="name" 
+                                    className="font-poppins block w-full py-2.5 px-3 bg-transparent border-0 border-b-4 border-border rounded-t-md appearance-none focus:outline-none focus:border-primary" 
+                                    placeholder={t('namePlaceholder')} 
                                     required 
                                 />
+                            </div>
+
+                            {/* Email Field - Label repositionné */}
+                            <div className="relative w-full group">
                                 <label 
                                     htmlFor="email" 
-                                    className="absolute text-sm text-foreground/70 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                    className="block text-sm xl:text-lg text-foreground/70 mb-2 font-medium"
                                 >
                                     {t('email')}
                                 </label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    className="font-poppins xl:text-lg block w-full py-2.5 px-3 bg-transparent border-0 border-b-4 border-border rounded-t-md appearance-none focus:outline-none focus:border-primary" 
+                                    placeholder={t('emailPlaceholder')} 
+                                    required 
+                                />
                             </div>
                         </div>
-
-                        {/* Message Field */}
+                        {/* Honeypot Field */}
+                        <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
+                        {/* Message Field - Label repositionné */}
                         <div className="relative w-full mb-8 group">
-                            <textarea 
-                                id="message" 
-                                rows={5} 
-                                className="font-poppins block w-full py-2.5 px-0 bg-transparent border-0 border-b-2 border-border appearance-none focus:outline-none focus:border-primary peer" 
-                                placeholder=" " 
-                                required 
-                            />
                             <label 
                                 htmlFor="message" 
-                                className="absolute text-sm text-foreground/70 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                className="block text-sm xl:text-lg text-foreground/70 mb-2 font-medium"
                             >
                                 {t('message')}
                             </label>
+                            <textarea 
+                                id="message" 
+                                rows={5} 
+                                className="font-poppins xl:text-lg block w-full py-2.5 px-3 bg-transparent border-0 border-b-4 border-border rounded-t-md appearance-none focus:outline-none focus:border-primary" 
+                                placeholder={t('messagePlaceholder')} 
+                                required 
+                            />
                         </div>
 
                         {/* Submit Button */}
@@ -83,10 +125,23 @@ export const Contact = () => {
                         >
                             {t('sendMessage')}
                         </button>
+
+                        {/* Status Message */}
+                        {statusMessage && (
+                            <div
+                                className={`mt-6 text-sm font-poppins px-4 py-2 rounded-md transition-all duration-300 ${
+                                    statusType === "success"
+                                        ? "text-green-700"
+                                        : "text-red-700"
+                                }`}
+                            >
+                                {statusMessage}
+                            </div>
+                        )}
                     </form>
                     
-                    {/* Social Links Section */}
-                    <div className="w-full lg:w-1/3 mt-10 lg:mt-0 ">
+                    {/* Social Links Section - Inchangé */}
+                    <div className="w-full lg:w-1/3 mt-10 lg:mt-0">
                         <div className="bg-card p-6 rounded-xl border font-poppins border-border/50 overflow-x-auto">
                             <h3 className="font-montserrat font-semibold text-xl mb-4 text-center lg:text-left">
                                 {t('connectWithMe')}
@@ -121,7 +176,6 @@ export const Contact = () => {
                                     </svg>
                                     LinkedIn
                                 </a>
-                                
                             </div>
                             
                             <div className="mt-8">
