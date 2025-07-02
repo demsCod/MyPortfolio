@@ -3,7 +3,7 @@ import { Section } from "./Section";
 import { ArrowRightIcon, DownloadIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-import Image from "next/image";
+// import Image from "next/image";
 
 export const Hero = () => {
     const { t } = useLanguage();
