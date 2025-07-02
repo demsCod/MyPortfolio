@@ -77,28 +77,28 @@ const ProjectsCards = () => {
             id: 1,
             title: "Minishell",
             descriptionKey: 'projectMinishell',
-            image: "https://github.com/iibabyy/minishell/blob/main/minishell.gif?raw=true",
+            image: "/github_render/minishell.gif",
             link: "https://github.com/iibabyy/minishell"
         },
         {
             id: 2,
             title: "Transcendence",
             descriptionKey: 'projectTranscendence',
-            image: "https://i.gifer.com/QgxJ.gif",
+            image: "/github_render/transcendence.gif",
             link: "https://github.com/42-alliance/transcendence"
         },
         {
             id: 3,
             title: "So_long",
             descriptionKey: 'projectSoLong',
-            image: "https://github.com/demsCod/so_long/blob/main/so_long.gif?raw=true",
+            image: "/github_render/so_long.gif",
             link: "https://github.com/demsCod/so_long"
         },
         {
             id: 4,
             title: "CUB_3D",
             descriptionKey: 'projectCub3D',
-            image: "https://github.com/demsCod/cub3D/blob/main/cub_3d.gif?raw=true",
+            image: "/github_render/cub_3d.gif",
             link: "https://github.com/demsCod/cub3D"
         }
     ];

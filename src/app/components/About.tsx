@@ -54,7 +54,7 @@ export const About = () => {
                         <div className="relative">
                             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl blur-md"></div>
                             <Image
-                                src="https://avatars.githubusercontent.com/u/151725068?v=4" 
+                                src="/images/mdembele-about.png" 
                                 alt="Mohamed Dembele" 
                                 width={450}
                                 height={450}
