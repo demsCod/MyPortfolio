@@ -54,6 +54,9 @@ export const About = () => {
                         <div className="relative">
                             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/10 rounded-xl blur-md"></div>
                             <Image
+                                loading="lazy"
+                                fetchPriority="low"
+                                priority={false}
                                 src="/images/mdembele-about.png" 
                                 alt="Mohamed Dembele" 
                                 width={450}
