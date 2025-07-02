@@ -56,7 +56,7 @@ export const Hero = () => {
                 </div>
             </div>
             
-            <div className="w-full flex justify-center md:w-1/2 md:justify-end relative z-10">
+            {/* <div className="w-full flex justify-center md:w-1/2 md:justify-end relative z-10">
                 <div className="relative">
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-primary/10 rounded-xl blur-md"></div>
                     <Image
@@ -72,7 +72,7 @@ export const Hero = () => {
                             2xl:w-[500px] 2xl:h-[500px]"
                     />
                 </div>
-            </div>
+            </div> */}
         </Section>
     );
 }
