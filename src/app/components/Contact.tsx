@@ -52,7 +52,7 @@ export const Contact = () => {
             <div className="w-5/6 mx-auto">
                 <div className="text-center mb-8 md:mb-12">
                     <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-montserrat font-bold mb-4 text-primary-foreground">
-                        {t('contactTitle')}👋🏿
+                        {t('contactTitle')} 👋🏿
                     </h1>
          
                     <p className="text-base sm:text-lg md:text-xl font-poppins mb-8 text-foreground/90 max-w-2xl mx-auto">
