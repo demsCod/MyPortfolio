@@ -11,7 +11,7 @@ export const Hero = () => {
   const resumeFile = "cv-mohamed-fr.pdf";
 
   return (
-    <div className="relative flex justify-center items-center overflow-hidden pt-20 pb-10 w-full">
+    <div className="relative flex justify-center items-center overflow-hidden mt-10 pt-20 pb-10 w-full">
       {/* Gradient Background Effects - Inversé pour que le bas soit bg-background */}
       <div className="absolute inset-0 pointer-events-none"></div>
 

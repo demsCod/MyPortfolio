@@ -36,7 +36,7 @@ const CardComponents: React.FC<CardComponentsProps> = ({
       </div>
       <div className="flex flex-col justify-between flex-1 p-3 sm:p-4">
         <div>
-          <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-bold mb-2">
+          <h3 className="text-lg sm:text-xl  font-poppins font-bold mb-2">
             {title}
           </h3>
           {description && (
@@ -109,7 +109,7 @@ const ProjectsCards = () => {
     },
   ];
   return (
-    <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 md:px-8">
+    <div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 ">
       {projects.map((project) => (
         <CardComponents
           key={project.id}
@@ -134,7 +134,7 @@ export const Projects = () => {
         <h1 className="text-xl sm:text-3xl md:text-4xl  font-poppins text-primary-foreground font-bold mb-3 sm:mb-4 text-start">
           {t("projectsTitle")}
         </h1>
-        <p className="font-poppins text-foreground/80 text-lg md:text-xl mb-8 md:mb-12 text-start max-w-2xl">
+        <p className="text-start font-poppins text-foreground/80 text-sm sm:text-base md:text-lg mb-6 sm:mb-8">
           {t("projectsSubtitle")}
         </p>
         <ProjectsCards />
