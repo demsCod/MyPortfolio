@@ -126,7 +126,7 @@ const ProjectsCards = () => {
 export const Projects = () => {
   const { t } = useLanguage();
   return (
-    <Section className="w-full flex items-center justify-center px-8 lg:py-12">
+    <Section className="w-full flex items-center justify-center px-8 lg:py-12 mt-10">
       {/* Gradient Background Effects */}
 
       {/* Content */}
