@@ -9,27 +9,25 @@ import { Footer } from "./components/Footer";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-background flex   ">
-      <div className="flex-col justify-self-center max-w-7xl w-full ">
-        <Header />
-        <Section id="hero" className="snap-start">
+    <main className="bg-background min-h-screen max-w-4xl">
+      <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,#ffffff_1px,transparent_2px)] bg-[size:24px_24px] pointer-events-none"></div>
+      <Header />
+      <div className="flex flex-col w-full">
+        <Section id="hero">
           <Hero />
         </Section>
-        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,#ffffff_1px,transparent_2px)] bg-[size:24px_24px] pointer-events-none"></div>
-        <div className="h-5/6 scroll-smooth relative z-10">
-          <Section id="skills" className="snap-start">
-            <Skills />
-          </Section>
-          <Section id="projects" className="snap-start">
-            <Projects />
-          </Section>
-          <Section id="contact" className="snap-start">
-            <Contact />
-          </Section>
-          <Section id="footer" className="snap-start">
-            <Footer />
-          </Section>
-        </div>
+        <Section id="skills">
+          <Skills />
+        </Section>
+        <Section id="projects">
+          <Projects />
+        </Section>
+        <Section id="contact">
+          <Contact />
+        </Section>
+        <Section id="footer">
+          <Footer />
+        </Section>
       </div>
     </main>
   );

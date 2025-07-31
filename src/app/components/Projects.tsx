@@ -23,24 +23,24 @@ const CardComponents: React.FC<CardComponentsProps> = ({
   const description = descriptionKey ? t(descriptionKey) : "";
 
   return (
-    <div className="bg-card backdrop-blur-sm rounded-lg shadow-xl flex flex-col border border-primary/20 overflow-hidden transition-all duration-300 hover:scale-103 hover:ring-2 ring-ring hover:shadow-primary/20 hover:shadow-lg xl:min-h-fit">
-      <div className="h-48 sm:h-40 md:h-48 lg:h-56 w-full overflow-hidden relative">
+    <div className="bg-card backdrop-blur-sm rounded-lg shadow-xl flex flex-col border border-primary/20 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:ring-2 ring-ring hover:shadow-primary/20 hover:shadow-lg h-full">
+      <div className="w-full aspect-video relative overflow-hidden">
         <Image
           src={image}
           alt={title}
           fill
           className="object-cover transition-transform duration-500 hover:scale-110"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           priority={false}
         />
       </div>
-      <div className="flex flex-col justify-between flex-1 p-4 md:p-5">
+      <div className="flex flex-col justify-between flex-1 p-3 sm:p-4">
         <div>
-          <h3 className="text-xl md:text-2xl font-montserrat font-bold mb-2">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-montserrat font-bold mb-2">
             {title}
           </h3>
           {description && (
-            <p className="text-lg font-poppins text-foreground/80 line-clamp-2 mb-3">
+            <p className="text-base sm:text-lg font-poppins text-foreground/80 line-clamp-2 mb-3">
               {description}
             </p>
           )}
@@ -126,21 +126,17 @@ const ProjectsCards = () => {
 export const Projects = () => {
   const { t } = useLanguage();
   return (
-    <Section className="relative w-full flex flex-col items-center justify-start py-16 md:py-20 lg:py-24">
+    <Section className="w-full flex items-center justify-center px-8 lg:py-12">
       {/* Gradient Background Effects */}
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl flex flex-col items-center">
-        <h1 className="font-montserrat text-primary-foreground text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
+      <div className="z-10 w-full flex flex-col ">
+        <h1 className="text-xl sm:text-3xl md:text-4xl  font-poppins text-primary-foreground font-bold mb-3 sm:mb-4 text-start">
           {t("projectsTitle")}
         </h1>
-        <p className="font-poppins text-foreground/80 text-lg md:text-xl mb-8 md:mb-12 text-center max-w-2xl">
+        <p className="font-poppins text-foreground/80 text-lg md:text-xl mb-8 md:mb-12 text-start max-w-2xl">
           {t("projectsSubtitle")}
         </p>
-        <div className="relative">
-          <hr className="border-t-2 border-border w-24 md:w-32 mx-auto mb-10 md:mb-14" />
-        </div>
-
         <ProjectsCards />
       </div>
     </Section>

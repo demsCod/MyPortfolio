@@ -12,7 +12,7 @@ export const translations = {
     scrollDown: "Scroll down to see my work",
 
     // Projects
-    projectsTitle: "My Projects",
+    projectsTitle: "Portfolio",
     projectsSubtitle: "Here are some of my recent projects I've worked on",
     viewProject: "View Project",
 
@@ -91,7 +91,7 @@ export const translations = {
     scrollDown: "Faites défiler pour voir mes projets",
 
     // Projects
-    projectsTitle: "Mes Projets",
+    projectsTitle: "PORTFOLIO ",
     projectsSubtitle:
       "Voici quelques projets récents sur lesquels j'ai travaillé",
     viewProject: "Voir le projet",

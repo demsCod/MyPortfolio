@@ -51,16 +51,16 @@ export const About = () => {
   };
 
   return (
-    <Section className="w-full min-h-screen flex items-center justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-16 md:py-20">
-      <div className=" w-5/6 flex flex-col items-center gap-8">
+    <Section className="w-full min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 md:py-16">
+      <div className="w-full max-w-7xl flex flex-col items-center gap-6 md:gap-8">
         {/* Titre principal */}
-        <div className="text-center mb-6 md:mb-12">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-montserrat font-bold mb-4 text-primary-foreground">
+        <div className="text-center mb-4 md:mb-8">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-bold text-primary-foreground">
             {t("aboutTitle")}
           </h1>
         </div>
 
-        <div className="w-full flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 xl:gap-16">
+        <div className="w-full flex flex-col lg:flex-row-reverse items-center gap-6 lg:gap-8 xl:gap-12">
           {/* Image Section */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end xl:justify-start order-1 lg:order-2">
             <div className="relative">
@@ -73,23 +73,22 @@ export const About = () => {
                 alt="Mohamed Dembele"
                 width={450}
                 height={450}
-                className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[450px] xl:h-[450px] 
-                                object-cover rounded-xl shadow-lg border-2 border-primary/20"
+                className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-cover rounded-xl shadow-lg border-2 border-primary/20"
               />
             </div>
           </div>
 
           {/* Text Content Section */}
           <div className="w-full lg:w-1/2 flex flex-col order-2 lg:order-1">
-            <h2 className="font-montserrat font-bold text-primary-foreground/80 text-3xl sm:text-4xl md:text-5xl mb-4">
+            <h2 className="font-montserrat font-bold text-primary-foreground/80 text-2xl sm:text-3xl md:text-4xl mb-3">
               Mohamed Dembele
-              <hr className="border-t-2 border-border rounded-2xl w-full mx-auto my-4" />
+              <hr className="border-t-2 border-border rounded-2xl w-full mx-auto my-3" />
             </h2>
-            <div className="font-poppins text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl/8 mb-8 leading-relaxed">
+            <div className="font-poppins text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl leading-relaxed">
               {aboutDescription.map((paragraph, index) => (
                 <p
                   key={index}
-                  className="mb-6"
+                  className="mb-4"
                   dangerouslySetInnerHTML={{
                     __html: highlightKeywords(paragraph),
                   }}

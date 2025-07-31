@@ -109,30 +109,30 @@ export const Skills = () => {
   ];
 
   return (
-    <Section className="w-full flex items-center justify-center px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-16">
-      <div className="max-w-7xl w-full flex flex-col">
-        <h2 className="sm:text-2xl md:text-5xl lg:text-6xl font-montserrat text-primary-foreground font-bold mb-4 lg:text-center">
+    <Section className="w-full flex items-center justify-center px-8 lg:py-12  ">
+      <div className=" w-full flex flex-col">
+        <h2 className="text-xl sm:text-3xl md:text-4xl  font-poppins text-primary-foreground font-bold mb-3 sm:mb-4 text-start">
           {t("skillsTitle")}
         </h2>
-        <p className="text-center font-poppins text-foreground/80 text-base sm:text-lg md:text-xl mb-10 max-w-3xl mx-auto">
+        <p className="text-start font-poppins text-foreground/80 text-sm sm:text-base md:text-lg mb-6 sm:mb-8">
           {t("skillsSubtitle")}
         </p>
 
         {/* Grid for skill cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl p-4 border border-border/50 shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 hover:border-primary/30 flex flex-col group"
+              className="bg-card rounded-xl p-3 sm:p-4 border border-border/50 shadow-md hover:shadow-xl cursor-pointer transition-all duration-300 hover:border-primary/30 flex flex-col group"
             >
-              <div className="flex items-center flex-col mb-4">
+              <div className="flex items-center flex-col mb-2 sm:mb-3">
                 {/* Icon */}
-                <div className="w-10 h-10 text-primary transition-transform duration-200 group-hover:-translate-y-1">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 text-primary transition-transform duration-200 group-hover:-translate-y-1">
                   {skill.icon}
                 </div>
 
                 {/* Skill name */}
-                <h3 className="mt-4 text-xl text-center font-medium font-poppins">
+                <h3 className="mt-2 sm:mt-3 text-base sm:text-lg md:text-xl text-center font-medium font-poppins">
                   {skill.name}
                 </h3>
               </div>

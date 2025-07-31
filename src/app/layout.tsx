@@ -61,8 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${sora.variable} ${poppins.variable} ${montserrat.variable} ${piedra.variable} antialiased h-full bg-background flex flex-col items-center justify-cen
- text-foreground `}
+        className={`${geistSans.variable} ${geistMono.variable} ${sora.variable} ${poppins.variable} ${montserrat.variable} ${piedra.variable} antialiased h-full bg-background flex flex-col items-center justify-center text-foreground max-w-[2000px] mx-auto w-full overflow-x-hidden`}
       >
         <LanguageProvider>{children}</LanguageProvider>
       </body>
