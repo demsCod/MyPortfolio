@@ -46,21 +46,25 @@ const piedra = Piedra({
 
 export const metadata: Metadata = {
   title: "Mohamed Dembele - Software Engineer",
-  description: "A Software Engineer specializing in web development and software solutions.",
+  description:
+    "A Software Engineer specializing in web development and software solutions.",
   icons: {
     icon: "/favicon.ico",
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${sora.variable} ${poppins.variable} ${montserrat.variable} ${piedra.variable} antialiased h-full bg-background text-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} ${sora.variable} ${poppins.variable} ${montserrat.variable} ${piedra.variable} antialiased h-full bg-background flex flex-col items-center justify-cen
+ text-foreground `}
       >
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );
