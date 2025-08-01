@@ -6,28 +6,34 @@ import { Skills } from "./components/Skills";
 //import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { GridBackground } from "@/components/ui/grid-background";
 
 export default function Home() {
   return (
     <main className="bg-background min-h-screen max-w-4xl">
-      <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,#ffffff_1px,transparent_2px)] bg-[size:24px_24px] pointer-events-none"></div>
-      <Header />
-      <div className="flex flex-col w-full">
-        <Section id="hero">
-          <Hero />
-        </Section>
-        <Section id="skills">
-          <Skills />
-        </Section>
-        <Section id="projects">
-          <Projects />
-        </Section>
-        <Section id="contact">
-          <Contact />
-        </Section>
-        <Section id="footer">
-          <Footer />
-        </Section>
+      <GridBackground className="fixed inset-0 z-0">
+        {/* Le contenu du background reste vide car c'est juste pour l'effet */}
+      </GridBackground>
+
+      <div className="relative z-10">
+        <Header />
+        <div className="flex flex-col w-full">
+          <Section id="hero">
+            <Hero />
+          </Section>
+          <Section id="skills">
+            <Skills />
+          </Section>
+          <Section id="projects">
+            <Projects />
+          </Section>
+          <Section id="contact">
+            <Contact />
+          </Section>
+          <Section id="footer">
+            <Footer />
+          </Section>
+        </div>
       </div>
     </main>
   );

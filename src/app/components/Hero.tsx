@@ -1,5 +1,6 @@
 "use client";
 import { ArrowRightIcon, DownloadIcon } from "@radix-ui/react-icons";
+import { WordPullUp } from "@/components/ui/word-pull-up";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
@@ -11,7 +12,7 @@ export const Hero = () => {
   const resumeFile = "cv-mohamed-fr.pdf";
 
   return (
-    <div className="relative flex justify-center items-center overflow-hidden mt-10 pt-20 pb-10 w-full">
+    <div className="relative flex justify-center items-center overflow-hidden mt-20 pt-20 pb-10 w-full">
       {/* Gradient Background Effects - Inversé pour que le bas soit bg-background */}
       <div className="absolute inset-0 pointer-events-none"></div>
 
@@ -20,10 +21,14 @@ export const Hero = () => {
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Text Content */}
           <div className="w-full lg:w-3/5 text-center lg:text-left">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-foreground font-montserrat font-extrabold mb-4">
-              {t("heroTitle")}
+            <h3>
+              <WordPullUp
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-foreground font-poppins font-bold mb-4"
+                words={t("heroTitle")}
+              />
             </h3>
-            <h2 className="text-lg sm:text-xl md:text-2xl font-poppins font-medium mb-6 text-primary-foreground">
+
+            <h2 className="text-lg sm:text-xl md:text-2xl xl:text-3xl font-poppins font-bold mb-6 text-primary-foreground">
               {t("heroSubtitle")}
               {""}
               <span className="text-foreground">{t("heroOpportunities")}</span>

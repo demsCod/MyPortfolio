@@ -4,8 +4,8 @@ export const translations = {
     language: "FR",
 
     // Hero
-    heroTitle: "Hey, I'm Mohamed",
-    heroSubtitle: "I am a Fullstack Software Developer",
+    heroTitle: "Hi, I'm Mohamed 👋🏾",
+    heroSubtitle: "Software Developer",
     heroOpportunities: ", open to new opportunities.",
     contactMe: "contact me",
     myResume: "my resume",
