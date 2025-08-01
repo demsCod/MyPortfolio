@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { TranslationKey } from "@/lib/i18n/translations";
 import React from "react";
+import { WordPullUp } from "@/components/ui/word-pull-up";
 
 // Interface pour les données de compétence
 interface Skill {
@@ -111,9 +112,10 @@ export const Skills = () => {
   return (
     <Section className="w-full flex items-center justify-center px-4 lg:px-2 lg:py-12  ">
       <div className=" w-full flex flex-col">
-        <h2 className="text-xl sm:text-3xl md:text-4xl  font-poppins text-primary-foreground font-bold mb-3 sm:mb-4 text-start">
-          {t("skillsTitle")}
-        </h2>
+        <WordPullUp
+          className="text-xl sm:text-3xl md:text-4xl  font-poppins text-primary-foreground font-bold mb-3 sm:mb-4 text-start"
+          words={t("skillsTitle")}
+        />
         <p className="text-start font-poppins text-foreground/80 text-sm sm:text-base md:text-lg mb-6 sm:mb-8">
           {t("skillsSubtitle")}
         </p>

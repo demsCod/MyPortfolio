@@ -83,7 +83,7 @@ export const translations = {
     language: "EN",
 
     // Hero
-    heroTitle: "Mohamed Dembele",
+    heroTitle: "Salut, Je suis Mohamed 👋🏾",
     heroSubtitle: "Développeur Logiciel",
     heroOpportunities: ", ouvert à de nouvelles opportunités.",
     contactMe: "me contacter",

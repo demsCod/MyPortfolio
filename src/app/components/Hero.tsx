@@ -21,12 +21,10 @@ export const Hero = () => {
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Text Content */}
           <div className="w-full lg:w-3/5 text-center lg:text-left">
-            <h3>
-              <WordPullUp
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-foreground font-poppins font-bold mb-4"
-                words={t("heroTitle")}
-              />
-            </h3>
+            <WordPullUp
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-foreground font-poppins font-bold mb-4"
+              words={t("heroTitle")}
+            />
 
             <h2 className="text-lg sm:text-xl md:text-2xl xl:text-3xl font-poppins font-bold mb-6 text-primary-foreground">
               {t("heroSubtitle")}
