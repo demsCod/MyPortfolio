@@ -17,7 +17,7 @@ export const Hero = () => {
       <div className="absolute inset-0 pointer-events-none"></div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-2 relative z-10">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Text Content */}
           <div className="w-full lg:w-3/5 text-center lg:text-left">

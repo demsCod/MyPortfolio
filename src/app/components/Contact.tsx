@@ -53,21 +53,21 @@ export const Contact = () => {
   };
 
   return (
-    <Section className="flex font-poppins flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 py-12 md:py-16">
+    <Section className="flex font-poppins flex-col items-center px-6 lg:px-4  py-12 md:py-16">
       <div className="w-full max-w-5xl mx-auto">
         <div className="text-center mb-6 md:mb-8">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold mb-3 text-primary-foreground">
+          <h1 className="text-xl sm:text-3xl md:text-4xl  font-poppins text-primary-foreground font-bold mb-3 sm:mb-4 text-start">
             {t("contactTitle")}
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg font-poppins mb-6 text-foreground/90 max-w-2xl mx-auto">
+          <p className="text-start font-poppins text-foreground/80 text-sm sm:text-base md:text-lg mb-6 sm:mb-8">
             {t("contactSubtitle")}
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 w-full">
+        <div className="flex flex-col  gap-6 lg:gap-8 w-full">
           {/* Form Section */}
-          <form className="w-full lg:w-2/3" onSubmit={handleSubmit}>
+          <form className="w-full " onSubmit={handleSubmit}>
             <div className="flex flex-col sm:flex-row sm:gap-4 mb-4 sm:mb-6">
               {/* Name Field */}
               <div className="relative w-full  group mb-4 sm:mb-0">
@@ -149,16 +149,13 @@ export const Contact = () => {
           </form>
 
           {/* Social Links Section - Inchangé */}
-          <div className="w-full lg:w-1/3 mt-10 lg:mt-0">
-            <div className="bg-card p-6 rounded-xl border font-poppins border-border/50 overflow-x-auto">
-              <h3 className="font-montserrat font-semibold text-xl mb-4 text-center lg:text-left">
-                {t("connectWithMe")}
-              </h3>
-              <p className="text-foreground/80 mb-6 text-center lg:text-left">
+          <div className="w-full  mt-10 lg:mt-0">
+            <div className="bg-card p-6 rounded-xl border justify-center  justify-items-center font-poppins border-border/50 overflow-x-auto">
+              <p className="text-foreground/80 mb-6 text-xl text-center ">
                 {t("findMeOn")}
               </p>
 
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+              <div className="flex flex-wrap justify-center  gap-4">
                 {/* GitHub */}
                 <a
                   href="https://github.com/demsCod"
@@ -195,12 +192,12 @@ export const Contact = () => {
               </div>
 
               <div className="mt-8">
-                <p className="text-foreground/80 text-sm text-center lg:text-left">
+                <p className="text-foreground/80 text-sm text-center ">
                   {t("orEmailDirectly")}
                 </p>
                 <a
-                  href="mailto:mohamed.pro.dembele@gmail.com"
-                  className="flex items-center justify-center lg:justify-start mt-2 font-medium text-primary hover:text-primary-foreground transition-colors"
+                  href="mailto:mdembeletech@gmail.com"
+                  className="flex items-center justify-center  mt-2 font-medium text-primary hover:text-primary-foreground transition-colors"
                 >
                   <svg
                     className="w-5 h-5 mr-2"
@@ -215,7 +212,7 @@ export const Contact = () => {
                       d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                     />
                   </svg>
-                  mohamed.pro.dembele@gmail.com
+                  mdembeletech@gmail.com
                 </a>
               </div>
             </div>

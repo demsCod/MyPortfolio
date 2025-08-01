@@ -27,7 +27,7 @@ export const translations = {
       "Here are the technologies and programming languages I specialize in. I'm constantly learning and expanding my skillset.",
 
     // Contact
-    contactTitle: "Contact Me",
+    contactTitle: "CONTACT ME",
     contactSubtitle:
       "I'm always open to new opportunities and collaborations. Feel free to reach out!",
     name: "Name",

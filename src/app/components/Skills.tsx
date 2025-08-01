@@ -109,7 +109,7 @@ export const Skills = () => {
   ];
 
   return (
-    <Section className="w-full flex items-center justify-center px-8 lg:py-12  ">
+    <Section className="w-full flex items-center justify-center px-4 lg:px-2 lg:py-12  ">
       <div className=" w-full flex flex-col">
         <h2 className="text-xl sm:text-3xl md:text-4xl  font-poppins text-primary-foreground font-bold mb-3 sm:mb-4 text-start">
           {t("skillsTitle")}

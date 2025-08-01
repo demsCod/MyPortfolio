@@ -109,7 +109,7 @@ const ProjectsCards = () => {
     },
   ];
   return (
-    <div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 ">
+    <div className="w-full px-4 lg:px-0 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 ">
       {projects.map((project) => (
         <CardComponents
           key={project.id}
@@ -126,7 +126,7 @@ const ProjectsCards = () => {
 export const Projects = () => {
   const { t } = useLanguage();
   return (
-    <Section className="w-full flex items-center justify-center px-8 lg:py-12 mt-10">
+    <Section className="w-full flex items-center justify-center px-6 lg:px-4 lg:py-12 mt-10">
       {/* Gradient Background Effects */}
 
       {/* Content */}
