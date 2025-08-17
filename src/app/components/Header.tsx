@@ -52,7 +52,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 px-4 backdrop-blur-md w-full lg:w-2/4 justify-self-center">
+    <header className="z-40 px-4 backdrop-blur-md w-full lg:w-2/4 justify-self-center">
       <Section className="flex justify-between items-center py-3 mx-auto w-full">
         <p className="text-lg sm:text-xl font-poppins font-bold">
           MOHAMED DEMBELE
